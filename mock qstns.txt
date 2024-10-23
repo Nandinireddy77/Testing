@@ -1,0 +1,575 @@
+1) Examples of monolithic and micro services?
+
+--> Monolithic: Shopify, Earlier versions of Amazon, Netflix, Uber
+--> Micro services: Paypal, LinkedIn, Twitter, Modern versions of Amazon, Netflix
+
+--> A monolithic application is built as a single unified unit while the microservives architecture is a collection of smaller, independently deployable services
+
+---------------------------------------------------------
+2)What are SVG and shadow DOM elements?
+
+--> SVG (Scalable Vector Graphics) is a way to create images that look good at any size, from tiny icons to huge banners. It uses simple text to describe how the image should look. You can change and animate these images with CSS and JavaScript, making them perfect for interactive graphics on websites.
+
+--> Shadow DOM helps web developers create components (like buttons or forms) that don't mess up the rest of the web page. It's like having a secret part of the webpage where you can put HTML and CSS that won't affect anything outside it. This makes it easier to build and reuse parts of a website without causing conflicts.
+
+----------------------------------------------------------
+
+3) How do you launch a batch file in selenium webdriver project?
+
+--> process ref = Runtime.getRuntime().executable("path of batch file"):
+    ref.waitFor();
+
+----------------------------------------------------------
+
+4) How do you run selenium webdriver test from the command line?
+       (class path)  
+--> java -cp <jar filename> <package name>.<class name>
+                      (or)
+    java -jar <jar filename>.jar
+
+----------------------------------------------------------
+
+* Stale Element Exception: It occurs when element present in dom page but not visible on webpage.
+* window.scrollBy() - to scroll down a page
+* window.scrollIntoView() - to scroll down to a particular element
+
+-----------------------------------------------------------
+
+5) What are the file extensions that can be used as a data source in selenium for different frameworks?
+
+* Excel Files (.xls, .xlsx)
+* CSV Files (.csv)
+* JSON Files (.json)
+* XML Files (.xml)
+* Properties Files (.properties)
+
+----------------------------------------------------------
+
+6) what are the testing types supported by selenium?
+
+1) Functional Testing
+2) Regression Testing
+3) Smoke Testing
+4) Sanity Testing
+5) Integration Testing
+6) End-to-End Testing: Tests the complete flow of an application from start to finish, ensuring that the entire system works together.
+7) Cross-Browser Testing: Ensures that the application works correctly across different web browsers.
+8) UI Testing:  Focuses on verifying that the user interface of the application behaves as expected. Checks the visual elements and their behavior.
+9) Performance Testing (with other tools): A software testing technique that measures how well an application performs under different workloads.
+10)Data-Driven Testing:  Uses different sets of data inputs to drive test cases. This helps in validating the same functionality with multiple data values.
+
+----------------------------------------------------------
+
+7) What are the different build phases in Maven?
+
+1) Validate
+2) Compile
+3) Test
+4) Package
+5) Verify
+6) Install
+7) Deploy
+
+----------------------------------------------------------
+
+8) Difference between Continuous Integration, Continuous Delivery and Continuous Deployment?
+
+--> Continuous Integration: A software development process where the changes made to software are integrated into the main code as and when a patch is ready so that the software will be always ready to be - built, tested, deployed, monitored - continuously.
+
+--> Continuous Delivery: This is a Software Development Process where the continuously integrated (CI) changes will be tested & deployed continuously into a specific environment, generally through a manual release process, after all the quality checks are successful.
+
+--> Continuous Deployment: A Software Development practice where the continuously integrated (CI) changes are deployed automatically into the target environment after all the quality checks are successful.
+
+----------------------------------------------------------
+ 
+9) What are the reasons for the occurence of a merge conflict?
+
+--> When there are two separate branches and they have got changes into the same line in the file
+
+--> When a particular file has got deleted in one of the branches but it has got modified in the other branch
+
+----------------------------------------------------------
+
+10) What is the importance of TestNG.xml file?
+
+* Organizes Test Suites: Groups multiple test classes for better management.
+* Defines Test Groups: Runs specific sets of tests based on criteria.
+* Specifies Parameters: Passes dynamic values to tests.
+* Controls Test Execution Order: Ensures tests run in a specific sequence.
+* Enables Parallel Execution: Runs tests concurrently to save time.
+* Enables/Disables Tests: Includes or excludes tests without code changes.
+* Includes/Excludes Methods: Provides fine-grained control over test methods. 
+
+-----------------------------------------------------------
+
+11) What are the different types of assertions?
+
+Equality, Boolean, Null, Same, Array, Collection, Exception, Timeout
+
+i)Equality Assertions: 
+*assertEquals: Verifies that two values are equal.
+Ex--> Assert.assertEquals(actual, expected);
+*assertNotEquals: Verifies that two values are not equal.
+Ex--> Assert.assertNotEquals(actual, expected); 
+
+ii)Boolean Assertions: 
+*assertTrue:  Verifies that a condition is true.
+Ex--> Assert.assertTrue(condition); 
+*assertFalse: Verifies that a condition is false.
+Ex--> Assert.assertFalse(condition);
+ 
+iii)Null Assertions: 
+*assertNull: Verifies that an object is null.
+Ex--> Assert.assertNull(object); 
+*assertNotNull:  Verifies that an object is not null.;
+Ex--> Assert.assertNotNull(object);
+
+iv)Same Assertions: 
+*assertSame: Verifies that two references point to the same object. 
+Ex--> Assert.assertSame(actual, expected);
+*assertNotSame: Verifies that two references do not point to the same object.
+Ex--> Assert.assertNotSame(actual, expected);
+
+v)Array Assertions: 
+*assertArrayEquals: Verifies that two arrays are equal.
+Ex--> Assert.assertArrayEquals(actualArray, expectedArray);
+
+vi)Collection Assertions: 
+*assertThat:  Check properties of collections like lists and sets. Uses Hamcrest matchers to perform complex validations.
+Ex--> Assert.assertThat(list, hasItem("value"));
+
+vii)Exception Assertions: 
+*assertThrows: Verifies that a block of code throws a particular exception.
+Ex--> Assert.assertThrows(ExceptionClass.class, () -> methodThatShouldThrow());
+
+viii)Timeout Assertions: 
+*assertTimeout:  Verifies that a block of code completes within a given period.
+Ex--> Assert.assertTimeout(Duration.ofSeconds(5), () -> methodThatShouldCompleteQuickly());
+
+----------------------------------------------------------------
+
+12) What is the difference between soft and hard asssertions?
+
+@ Soft Assertion:
+*Test execution will be aborted if the assert condition is not met.	
+*No need to invoke any method to view test results.
+(*By default, Assert in Selenium WebDriver are Hard Asserts.)	
+*These should be used in scenarios where it is required to halt the test execution if a critical test step results in a failure.
+*Opening the webpage www.geeksforgeeks.org and matching page title with the expected title and verifying if the required web elements are being displayed or not. If the page URL is incorrect then the assert should be thrown.	
+
+@ Hard Assertion:
+*Test execution will continue till the end of the test case even if the assert condition is not met.
+*Tester needs to invoke assertAll(), to view assertions at the end of the test result.
+(*These are not included by default in the TestNG framework.)
+*These should be used in scenarios where the failure of certain conditions does not hamper the execution of other test steps in that method.
+*In eCommerce website when the order is being placed, the soft assert can be used to verify the number of cart items. If the number of cart items matches with the one user expected value then the test is passed and if not test result is noted and the test execution continues.
+
+-----------------------------------------------------------------
+
+13) What does a testcase template contains or Components of a Test Case?
+
+*Test Case ID: Unique identifier for the test case.
+*Description: Brief description of the test case.
+*Preconditions: Any setup needed before executing the test.
+*Steps: Detailed steps to execute the test.
+*Test Data: Specific data needed for the test.
+*Expected Result: The expected outcome of the test.
+*Actual Result: The actual outcome (filled after execution).
+*Status: Pass or fail status based on comparison of expected and actual results.
+
+-------------------------------------------------------------------
+
+14) Test Scenario  vs  Test Requirement vs Test Case
+ 
+i)Test Scenario:
+
+Definition:
+*A high-level description of a situation or functionality to be tested.
+*It outlines what needs to be tested without going into the specifics of the steps involved.
+
+Purpose:
+*To ensure coverage of all possible user actions and application behaviors.
+*To provide a broad view of what needs to be tested.
+
+Example:
+Verify the login functionality with valid and invalid credentials.
+
+ii)Test Requirement:
+
+Definition:
+*A detailed specification of what the software should do, usually derived from business or functional requirements.
+*Describes the conditions or capabilities needed by users to solve a problem or achieve an objective.
+
+Purpose:
+*To define the criteria that the software must meet to be considered complete and functional.
+*To provide a basis for test scenarios and test cases.
+
+Example:
+*The system must allow users to log in using a username and password.
+
+iii)Test Case:
+
+Definition:
+
+* A detailed plan for testing a specific part of an application. It describes what needs to be tested, how it will be tested, and what the expected result should be.
+
+                                    (or)
+
+//*A detailed set of actions (steps) along with the expected results to validate a specific functionality or feature.
+*Includes precise inputs, execution conditions, and the expected outcome.//
+
+Purpose:
+*To provide a step-by-step guide for testers to validate specific aspects of the software.
+*To ensure that all functionality is tested thoroughly.
+
+----------------------------------------------------------
+
+15) Drawbacks of waterfall and agile methodology
+
+i)Waterfall:
+
+*Inflexibility to Changes
+*Late Testing: Testing is performed only after the development phase is complete. Bugs and issues are discovered late in the development cycle, which can be more  expensive and time-consuming to fix.
+*High Risk and Uncertainty
+*Poor Visibility and Flexibility: Progress is not visible until the later stages of the project.
+
+ii)Agile:
+
+*Requires Experienced Team
+*Scope Creep: Agile allows for changes and additions to requirements throughout the project. This can lead to scope creep, where the project continuously grows beyond  its original intent, potentially leading to overrun budgets and timelines.
+*Less Predictability:  Agile focuses on iterative development and continuous feedback. This can make it difficult to predict the overall timeline and cost of the  project. 
+*Requires Constant User Involvement: Agile relies on regular feedback from stakeholders and users. This can be time-consuming and challenging if stakeholders are not available or if their involvement is inconsistent.
+
+-----------------------------------------------------------
+
+16) What are the principles of testing?
+
+i) Testing Shows Presence of Defects: Testing can show that defects are present, but it cannot prove that there are no defects.
+ii) Exhaustive Testing is Impossible: Testing everything (all combinations of inputs and preconditions) is not feasible except for trivial cases.
+iii) Early Testing: Testing activities should start as early as possible in the software development lifecycle (SDLC).
+iv)  Testing is Context Dependent: Testing is done differently in different contexts. For example, safety-critical software is tested differently from an e-commerce  site
+
+---------> Unit testing is done by developers.
+
+----------------------------------------------------------
+
+17) What are the different types of environments?
+
+*Development Environment: Used by developers to write and initially test their code. 
+*Testing Environment: Used by testers to verify the functionality, performance, and security of the application.
+*Staging Environment: Acts as a pre-production environment where final testing occurs before deployment to production.
+*Production Environment: The live environment where the application is used by end-users. 
+*Sandbox Environment: An isolated environment used for experimentation and testing without affecting other environments.
+*Disaster Recovery (DR) Environment:  A backup environment used to restore services in case the production environment fails.
+
+----------------------------------------------------------
+
+18) Difference between epic and retrospective meeting? 
+
+-->Epic:
+*What it is: A big task or project that is too large to complete all at once.
+*Purpose: To break down into smaller tasks that can be done over time.
+*Example: Building a house. The epic would be "Build a house," and the smaller tasks would be things like "Lay the foundation," "Build the walls," and "Install the  roof."
+
+-->Retrospective Meeting
+*What it is: A team meeting held regularly to talk about how things went and how to improve.
+*Purpose: To learn from past work and make future work better.
+*Example: After cooking a big meal, the family sits down to discuss what recipes worked, what didn't, and how they can cook better next time.
+
+-----------------------------------------------------------
+
+19) Difference between testcase and testscripts?
+
+-->Test Case:
+What it is: A detailed plan for testing a specific part of an application.
+Purpose: To describe what needs to be tested, how it will be tested, and what the expected result should be.
+Example: Imagine testing a login feature on a website. A test case might describe:
+  Steps: Open the login page, enter a username and password, click the login button.
+  Expected Result: The user should be taken to their dashboard.
+
+-->Test Script:
+What it is: A set of instructions written in a programming or scripting language to automate the execution of test cases.
+Purpose: To automate the testing process, saving time and ensuring consistency.
+Example: A script written in a language like Python or using a tool like Selenium that automatically performs the steps of the test case: opening the browser, entering the username and password, clicking the login button, and checking if the user is taken to the dashboard.
+
+-------------------------------------------------------------
+
+20) what is the purpose of using swagger and postman in API?
+
+*Swagger: Helps design and document APIs.
+*Postman: Helps test and develop APIs.
+
+-------------------------------------------------------------
+
+21) What are the things that you can include in your testcase?
+
+1. Test Case ID: A unique identifier for the test case, often using a consistent naming convention (e.g., TC-001).
+2. Test Case Title: A brief description of the test case, summarizing what will be tested (e.g., "Verify login with valid credentials").
+3. Description: A detailed description of the test case, explaining its purpose and what it aims to verify (e.g., This test case verifies that a user    can successfully log in with valid credentials)
+4. Preconditions: Any prerequisites or setup that must be done before executing the test case (e.g., user must be registered, the login page is    accessible).
+5. Test Steps: A step-by-step list of actions to perform during the test. Each step should be clear and concise.
+e.g., Open the login page.
+      Enter a valid username.
+      Enter a valid password.
+      Click the "Login" button.
+6. Test Data: Any specific data required to execute the test case (e.g., username and password).
+7. Expected Result: The expected outcome of each step or the overall test case, describing what should happen if the test passes.(e.g., The user is redirected to the dashboard)
+8. Actual Result: A field to record the actual outcome when the test is executed, to be filled in during testing (e.g., To be filled during testing)
+9. Pass/Fail Status: A field to indicate whether the test case passed or failed based on the actual result compared to the expected result (e.g., To be filled during testing)
+10. Priority: Indicates the importance of the test case, which can help in prioritizing test execution (e.g., High, Medium, Low).
+11. Severity: Indicates the impact of a failure of the test case on the application (e.g., Critical, Major, Minor).
+12. Attachments: Any additional files or screenshots that support the test case, such as diagrams, logs, or configuration files (e.g., Screenshot of the login page)
+13. Test Environment: Specifies the environment in which the test will be executed (e.g., operating system, browser, hardware).
+14. Automation Status: Indicates whether the test case is automated, manual, or both.
+15. Comments/Notes: Any additional information or remarks that can help in understanding or executing the test case (e.g., Ensure the database is reset before running the test)
+
+-----------------------------------------------------------------
+
+--> Format of dom is xml file
+
+-----------------------------------------------------------------
+
+22) What is java script executor. In which case you will use it?
+
+*JavaScriptExecutor is an interface provided by Selenium WebDriver. It allows you to execute JavaScript code directly within the browser from your automated test scripts. This is useful for performing actions that are not natively supported by Selenium WebDriver or for interacting with web elements that are difficult to locate or manipulate using standard Selenium methods.
+
+*It is used for Scrolling, clicking hidden elements, fetching browser information, manipulating DOM, triggering alerts.
+
+-----------------------------------------------------------------
+
+23) In POM what will you write in page class and test class?
+
+--> Page class: Bylocators and page actions that I'm going to perform in the locators
+--> Test class: In the Test Class, you write your test methods that use the Page Class methods to perform actions on the web page and assert the outcomes.
+
+-----------------------------------------------------------------
+
+24) What is API gateway?
+
+--> An API Gateway is a server that acts as an intermediary between client applications and a collection of backend services. It serves as a single entry point for all client requests to microservices, providing a way to manage, route, and secure API traffic.
+
+-----------------------------------------------------------------
+
+25) Name some xpath tools?
+
+1. XPath Helper
+2. ChroPath 
+3. Selectorgadget 
+4. Scraper 
+
+-----------------------------------------------------------------
+
+26)Difference between BDD, TDD and ATDD?
+
+1. Test-Driven Development (TDD):
+
+-->Definition: A software development process where tests are written before writing the actual code.
+
+-->Process:
+Write a Test: Develop a test for a new function or feature.
+Run the Test: Run the test and watch it fail (since the feature isn’t implemented yet).
+Write Code: Write the minimum amount of code necessary to pass the test.
+Run Tests: Run all tests to ensure the new test passes and no existing tests are broken.
+Refactor: Refactor the code to improve structure and remove duplication without changing functionality.
+Repeat: Continue this cycle for each new feature or function.
+
+-->Benefits:
+Ensures that code is tested from the start.
+Helps in writing only the necessary code.
+Encourages simple and clear designs.
+
+-->Tools: JUnit, NUnit, TestNG, etc.
+
+2. Behavior-Driven Development (BDD):
+
+-->Definition: An extension of TDD that focuses on the behavior of the application for the end user. It uses natural language to describe the tests.
+
+-->Process:
+Define Behavior: Collaboratively define the behavior of the application using user stories and acceptance criteria written in natural language.
+Write Scenarios: Write scenarios that describe the expected behavior using a Given-When-Then format.
+Automate Tests: Automate the scenarios with code.
+Run Tests: Run the tests to see them fail initially.
+Implement Code: Write the necessary code to make the tests pass.
+Refactor: Clean up the code to ensure it adheres to best practices and design patterns.
+Repeat: Continue this cycle for each new behavior or feature.
+
+-->Benefits:
+Improves communication between developers, testers, and non-technical stakeholders.
+Ensures the software meets the business requirements.
+Provides clear documentation of the system’s behavior.
+
+-->Tools: Cucumber, SpecFlow, JBehave, etc.
+
+3. Acceptance Test-Driven Development (ATDD)
+
+-->Definition: A collaborative practice where the team writes acceptance tests before development begins. It focuses on the functionality and acceptance criteria of the application.
+
+-->Process:
+Define Acceptance Criteria: Collaboratively define acceptance criteria for each user story or feature.
+Write Acceptance Tests: Develop acceptance tests based on the criteria.
+Run Tests: Execute the tests and see them fail initially.
+Implement Code: Write the code to satisfy the acceptance tests.
+Run Tests: Run the tests again to ensure they pass.
+Refactor: Clean up the code if necessary.
+Repeat: Continue this cycle for each new feature or user story.
+
+-->Benefits:
+Ensures that the application meets the customer's requirements.
+Involves all stakeholders in the development process.
+Provides a clear understanding of what is to be achieved.
+
+-->Tools: FitNesse, Robot Framework, Cucumber (can be used for both BDD and ATDD), etc.
+
+------------------------------------------------------------------------
+
+27) Difference between static and dynamic array?
+
+i) Static Array:
+
+*The memory allocation occurs during compile time.
+*The array size is fixed and cannot be changed.
+*Useful when the number of elements is known in advance and doesn't change.
+*The location is in Stack Memory Space.
+
+ii) Dynamic Array:
+
+*The memory allocation occurs during run time.
+*The array size is not fixed and can be changed.
+*Useful when the number of elements is unknown or varies over time.
+*The location is in Heap Memory Space.
+
+------------------------------------------------------------------------
+
+28) What are the disadvantages of selenium and what exactly selenium cannot do?
+
+*Limited Support for Desktop Applications: Selenium is designed for web applications and cannot be used to test desktop applications.
+
+*No Built-In Reporting: Selenium does not have built-in reporting features. You need to integrate it with third-party tools or frameworks like TestNG, JUnit, or Allure for reporting purposes.
+
+*Browser Support and Compatibility: Although Selenium supports multiple browsers, there can be inconsistencies and compatibility issues across different versions of browsers and browser drivers.
+
+*No Support for Image-Based Testing: Selenium cannot test images, visual aspects, or color contrasts directly. For visual testing, integration with tools like Applitools is required.
+
+*Handling of CAPTCHA and OTP: Selenium cannot handle CAPTCHA, OTP (One-Time Password), and other forms of two-factor authentication directly as they are designed to prevent automated scripts.
+
+*Requires Programming Knowledge: Selenium requires knowledge of programming languages like Java, C#, Python, or JavaScript, making it less accessible to non-technical users.
+
+*No Built-In Technical Support: Being an open-source tool, Selenium does not offer official technical support. Users rely on community forums and third-party resources for help.
+
+---------------------------------------------------------------------------
+
+29) What  is the default capacity of arraylist in Java?
+
+-->Whenever an instance of ArrayList in Java is created then by default the capacity of Arraylist is 10.
+
+---------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

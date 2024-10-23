@@ -1,0 +1,156 @@
+BDD-Cucumber Framework:
+
+* Behaviour Driven Development(BDD) is an Agile software development methodology in which an application is documented and designed around the behaviour a user expects   to experience when interacting with it. It enables software testers to complete test scripting in plain English. It is all about collaboration between teams(Business   team and technical team) and it is used to bridge the gap between these two teams.
+
+* Cucumber is the tool that supports BDD framework.
+
+-->BDD Tools:
+* Cucumber(Java/ Ruby framework)
+* Specflow(.Net framework)
+* Behave(Python framework)
+* Behat(PHP framework)
+
+* In BDD Cucumber framework mainly 3 components are available.
+ i) Feature file (created under src/test/resources)
+ ii) Step Definition Package(stepdefinition.java file) (created under src/test/java)
+ iii) Runner Package(testrunner.java file)
+
+i) Feature file: A feature file contains a set of steps to achieve particular test objectives. Every step can be developed by using some keywords like Given, When,    Then, And, But. We can call this language as Gherkin language. In a feature file we will write Background key section, Scenario or Scenario Outline.
+
+1) Given: Preconditions are mentioned in the 'Given' keyword. It's the first step in a scenario and is usually used to describe the initial context. It is good to    avoid talking about user interaction in 'Given' steps.
+
+2) When: The purpose of 'When' steps is to describe the user action.
+
+3) Then: 'Then' keyword defines the Outcome of previous steps.
+
+4) And: This is used for statements that are an addition to the previous steps and represent positive statements.
+
+5) But: This is used for statements that are an addition to previous steps and represent negative statements.
+
+@ Background Key: It contains common reusable steps which can be executed first for every scenario. Before executing scenario, background section will be executed.
+
+@ Scenario: A scenario steps can be executed only once for a particular set of input values. Scenario is used for individual, non-parameterized testcases.
+
+Ex: Feature: Post feature of Facebook  (This will test the post functionality at user wall)
+
+    Background: (common step)
+         Given   User launch chrome browser
+         When    user opens url "______"
+
+    Scenario: Succesful login with valid page
+	 And    User enters username as "Admin" and password as "admin123"
+	 Then   Go to skill page 
+	 When   Add skills with skill name as "Java" and skill description as "Java developer"
+	 When   Click on logout button
+	 Then   Close browser	 
+
+@ Scenario Outline: In Scenario Outline steps can be executed multiple times with different set of input data as defined in the examples section. S.O is used for parameterized testcases.
+
+Ex: Feature: Create Nationality records
+    
+    Scenario Outline: TC01_Create Nationality records
+	 When   I open orange HRM website
+	 Given  I enter valid username "Admin" and valid password "admin123" 
+	 Then   I created Nationality Record "<Nationality Record>"-->(parameter)
+	 
+	 Examples:
+	    | Nationality Record |
+	    | "Indian211"        |
+	    | "Indian212"        |
+	    | "Indian213"        |
+
+ii) Step definition: In step definition, we will write methods for the test steps in feature file and then map those methods with the test steps. In a step definition file 'And' and 'But' are listed as Given/When/Then. There are no 'And' and 'But' keywords in step definition file. 
+
+* Hooks: Hooks(@Before,  @After) is a commom snippet of code, which can be executed globally before and after scenario. We can use hooks in step definition file or can   be used in a separate configuration class. We can use the same hook any number of times but we need to give order. 
+
+Ex: @Before (order=1)
+     public void m1(){
+
+     }
+
+    @Before (order=2)
+     public void m2(){
+
+     }
+
+* Tags: We can tag scenarios/ feature using @ annotation. If we tag a feature, then that will be applicable to every scenario under that feature or else we can tag       scenarios separately. We can use any number of tags.
+
+Ex: Annotating tags with hooks
+   
+     @Before(@somke)
+
+     @smoke--> tag name
+     scenario search
+     
+     @smoke
+     scenario advance search
+
+     @Regression
+     scenario homepage feature    
+
+iii) Runner file: In a runner file we will add cucumber options like
+
+--> dryRun: True: Checks if all the steps have the step definition. It doesn't run any scenario but checks if any steps in scenario doesn't have respective methods.
+--> features: Here we will give the path of feature file
+--> glue: Here we wll give the path of step definition file
+--> tags: Execute tags in the feature file in order to control the execution order
+--> monochrome: Display the console output in a much readable way (for alignment)
+--> strict: It will fail execution if there are any undefined or pendings steps 
+--> plugin: here we give path to generate reports
+ 
+Ex: @RunWith(cucumber.class)
+    @Cucumber options(
+    features= "class path: features" or "class path: features/ file name",
+    glue= {"step_definitions"},
+    plugin= {"pretty","path to store reports"},
+    tags= {"@tag name"}
+
+--> In latest cucumber framework we can also write the same steps as,
+
+1cucumber.publish.enabled= true
+2cucumber.plugin= pretty, path to generate reports
+3cucumber.glue= SeleniumGlueCode1
+4cucumber.features= feature file path
+5cucumber.dryRun= true
+6cucumber.monochrome= true
+7cucumber.StepNotifications= true
+8cucumber.strice= true
+
+
+
+-->Data Tables:
+
+* To achieve parameterization we use data tables.
+* In a feature file, for a particular step we can write parameters and corresponding input
+* And to get those input values in step definition file, we have to create Data table objects at corresponding method level
+
+--> Difference between scenario outline and data table:
+
+In S.O all steps will execute multiple times whereas in D.T only particular steps with parameters get executed multiple times.
+
+Ex: Feature: Orange HRM Application_Create Nationality Record
+    Scenario: TC01_Create Nationality Record
+	Given  I open Orange HRM website
+	When   User navigate to login page
+	    | Username  | Password  |
+	    | Admin     | admin123  |
+	And   I created Nationality Record
+	    | Nationality |
+	    | Indian261   |
+	    | Indian262   |
+	    | Indian263   |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

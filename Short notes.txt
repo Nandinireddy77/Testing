@@ -1,0 +1,417 @@
+
+--> Smoke testing is used to check if a build of the software is stable enough for it to be tested.Smoke testing, also called build verification testing or confidence testing.
+
+--> Regression testing is used to verify if any recent changes have impacted the existing functionality. Regression tests are also known as the Verification Method
+
+--> Functional testing is carried out to ensure that the application's overall functionality meets the business requirements.
+
+--> System testing  is a type of software testing that evaluates the overall functionality and performance of a complete and fully integrated software solution. System testing is also known as black-box testing because it focuses on the external parts of the system
+
+-->Sanity testing is used to validate the changes made to one or few specific parts of the application in order to make sure that the software is still functioning as expected after a small change or a bug fix.It is also known as a subset of acceptance testing.
+
+-->Integration testing is a type of software testing where components of the software are gradually integrated and then tested as a unified group. Integration testing is also known as string testing or thread testing. Integration testing can be conducted manually by QA teams.
+
+-->User Acceptance Testing  is a phase of software development in which the software is tested in the "real world" by the intended audience or business representative.
+
+-->Unit testing  a.k.a. component or module testing is the process where you test the smallest functional unit of code
+
+-->In white-box testing, the developer will inspect every line of code before handing it over to the testing team or the concerned test engineers.
+• The code is noticeable for developers throughout testing; that's why this process is known as WBT(White Box Testing).
+
+-->Black box testing is a process of checking the functionality of an application as per the customer requirement. The source code is not visible in this testing, that's why it is known as black-box testing.
+
+-->Greybox testing is a software testing method to test the software application with partial knowledge of the internal working structure.
+• It is a combination of black box and white box testing because it involves access to internal coding to design test cases as white box testing and testing practices are done at functionality level as black box testing.
+
+---------------------------
+
+--> Functional testing aims to figure out whether given functionality works as specified. System testing aims to figure out whether the whole system fulfills the requirements given to it. So in functional testing you test that given part of the whole system functions in a specified way.
+
+---------------------------
+
+6)
+--> POM- It is a design pattern that helps create object repositories(centralized storage of locators in the form of objects) for the web elements. POM improves code reusability and  readability. Multiple testcases can be run on the object repository.
+
+
+--------------------------
+ 
+7)
+-->Abstraction is the process of hiding certain details and showing only essential information to the user. Abstraction can be achieved with  either abstract classes or interfaces.
+
+* Abstract class is  a restricted class that cannot be used to create objects, to access it, it must be inherited from another class.
+
+*An interface is a completely abstract class that is used to group related methods with empty bodies.
+
+-->Polymorphism means many forms and it occurs when we have many classes that are related to each other by inheritance.
+
+-->get() method is declared in webdriver interface and implemented in RemoteWebDriver interface.
+
+--------------------------
+
+11)
+-->All web elements are affected by the implicit wait in selenium, which is set globally for the duration of the test script's execution.
+
+--------------------------
+
+13)
+File src = ((TakeScreenshot)driver).getScreenshotAs(OutputType.FILE);
+File dest = new File("destination where ss to be stored");
+Fileutils.copyFile(src,dest);
+
+--------------------------
+
+18)
+--> Constructor is a special method that is used to initialize objects.
+
+--------------------------
+
+21)
+-->Modifiers are keywords that you can add to different definitions to change their meanings.
+
+-->Access modifiers are the keywords which define the accessibility of a class and its members.
+
+-->Non-access modifiers provide information about the characteristics of a class, method or variable to the JVM. These are of 7 types. They are static, final, abstract, synchronized, volatile, transient, native.
+
+-------------------------
+23)
+-->The "this" keyword refers to the current object in a method or constructor. The most common use of the this keyword is to eliminate the confusion between class attributes and parameters with the same name.
+
+-->"this" can also be used to:
+
+*Invoke current class constructor
+*Invoke current class method
+*Return the current class object
+*Pass an argument in the method call
+*Pass an argument in the constructor call 
+
+-------------------------
+
+27)
+* Loose coupling means that the classes are independent to each other.
+
+--------------------------
+
+
+36)
+* JDK is Java Development kit. It is a kit that provides the environment to develop and run the java program.
+
+*JRE is Java Runtime Environment. It is an installation package that provides an environment to only run the java program in a machine.
+
+*JVM stands for Java Virtual Machine. It acts as a runtime engine to run java applications and it is responsible for executing the java program line by 
+ line, hence it is also known as an interpreter. 
+
+---------------------------
+
+40)
+*Checked exception happens at compile time when the source code is transformed into an executable code. It is checked by the compiler.
+
+*Unchecked exceptions happen at runtime when the executable program starts running. These type of exceptions are not  checked by the compiler but by the JVM at runtime.
+
+------------------------------------------------
+
+
+58)
+*Typecasting is the process of converting the value of a single data type into another data type.
+
+------------------------------------------------
+
+59)Maven is an open-source build automation and project management tool widely used for Java applications.It is used to build a project. It contains an XML file that has information about the project, and this XML file also contains dependencies and configuration details used by Maven to build the project.
+
+-->A build tool takes care of everything for building a process like 
+*It will automate the source code
+*Compiles the source code
+*Packages compiled code into a ZIP file
+*Installs the packaged code in the repository
+
+
+-->Advantages of using Maven:
+*It eliminates adding set of jars in each project
+*Maven makes it very easy to start a project in various environments
+*Building and deploying the project is very simple 
+
+------------------------------------------------
+8897794204
+import java.util.HashMap;     
+public class CountOccuranceOfChar2  
+{  
+public static void main(String args[])   
+{  
+String str = "google";  
+//HashMap char as a key and occurrence as a value  
+HashMap <Character, Integer> charCount = new HashMap<>();  
+for (int i = str.length() - 1; i >= 0; i--)   
+{  
+if(charCount.containsKey(str.charAt(i)))   
+{  
+int count = charCount.get(str.charAt(i));  
+charCount.put(str.charAt(i), ++count);  
+}   
+else   
+{  
+charCount.put(str.charAt(i),1);  
+}  
+}  
+System.out.println(charCount);  
+}  
+} 
+
+-------------------------------------------------------------------------------------------------------
+
+Xpath:
+
+--->Absolute XPath refers to the direct way of finding an element. The major drawback of Absolute XPath is that if there are any changes in the element's path, then the XPath will fail. 
+
+The XPath begins with a single forward-slash (/), which states that the element can be selected from the root node.
+
+--->In the case of Relative XPath, the path begins from the middle of the HTML DOM structure. Here, the structure starts with a double forward-slash (//) that states that the element can be searched anywhere on the webpage.
+
+-------------------------------------------------
+
+Q. Explain the difference between single slash and double slash in XPath.
+
+-->Single slash (/): Single slash is used to create an XPath with an absolute path. In this case, the XPath would start selection from the document’s start node.
+-->Double slash (//): Double slash is used to create an XPath with a relative path. In this case, the XPath would start selection from anywhere within the document.
+
+-------------------------------------------------
+
+Manual testing has its own drawbacks, however, a few of which can include:
+
+It’s extremely time-consuming
+There’s a high risk of error
+It requires the presence of a tester 24/7
+Requires manual creation of logs
+Has a limited scope
+
+--------------------------------------------------
+
+Q. What is Selenium?
+
+Selenium is an open-source, automated testing tool used to test web applications across various browsers. Selenium can only test web applications, unfortunately, so desktop and mobile apps can’t be tested. However, other tools like Appium and HP’s QTP can be used to test software and mobile applications. 
+
+-------------------------------------------------
+
+Q. What makes Selenium Such a Widely Used Testing Tool?
+
+1.Selenium is easy to use since it’s primarily developed in JavaScript
+2.Selenium can test web applications against various browsers like Firefox, Chrome, Opera, and Safari 
+3.Tests can be coded in several programming languages like Java, Python, Perl, PHP, and Ruby 
+4.Selenium is platform-independent, meaning it can deploy on Windows, Linux, and Macintosh 
+5.Selenium can be integrated with tools like JUnit and TestNG for managing test cases and generating reports.
+
+--------------------------------------------------
+
+-->IDE--Integrated Development Environment
+-->RC-- Remote Control
+
+--------------------------------------------------
+
+Q. What is the difference between getwindowhandles() and getwindowhandle()?
+
+* getwindowhandles(): It is used to retrieve the addresses of all currently open browsers. This method returns a Set data type containing the addresses.
+* getwindowhandle(): It is used to obtain the current browser’s address and its return type is a string data type.
+
+---------------------------------------------------
+
+Q.Mention some of the popular tools used for Automation testing.
+
+There are several popular tools used for automation testing, including;
+
+* Selenium
+* Appium
+* TestComplete
+* Katalon Studio
+* Ranorex
+* HP Unified Functional Testing (UFT)
+* Apache JMeter, and many more.
+
+---------------------------------------------------
+
+-->Locator:
+
+* Selenium uses locators to find and match the elements of a web page that it needs to interact with.
+
+----------------------------------------------------
+
+Q. What is the difference between type keys and type commands?
+
+-->There is a difference between type keys and type commands in computer programming. Type keys are specific characters that you type on the keyboard, while type commands are instructions given to the computer.
+
+----------------------------------------------------
+
+Q. What are the significant changes/upgrades made to various Selenium versions?
+
+-->Selenium’s first version included only three sets of tools: Selenium IDE, Selenium RC, and Selenium Grid. There was no WebDriver included in the first version. Later, Selenium WebDriver was introduced and hence included in Selenium V2. However, as WebDriver got included, the use of Selenium RC was discouraged with time and has not been much in use since. Selenium 3 is in use. There are some newly added Selenium features such as the IDE and WebDriver. Selenium 4 is the latest released version.
+
+-----------------------------------------------------
+
+Q. What is an exception test in Selenium?
+
+-->The exception test in Selenium is an exception that you expect will be thrown inside a test class. If you have written a test case in such a way that it should be thrown as an exception, then you can use the test annotation and specify the exception in the parameters.  
+
+-----------------------------------------------------
+
+Q. What is TestNG in Selenium?
+
+-->TestNG is a popular testing framework that is widely used in Selenium. It is used to manage and run test cases in a more efficient and organized manner. TestNG provides features like grouping, parallel testing, and reporting.
+
+------------------------------------------------------
+
+ Q.Why do testers choose Selenium over QTP?
+
+Selenium is more widely used than QTP since:
+
+*Selenium is an open-source tool, whereas QTP is a profitable tool.
+*Selenium is used specifically for testing web-based applications, while QTP can be used for testing client–server applications too.
+*Selenium supports multiple browsers like Firefox, IE, Opera, Safari, etc., and has multiple operating systems compatibility too. Selenium-supported OS platforms are Windows, Mac, Linux, etc. On the other hand, QTP is limited to Internet Explorer on Windows.
+*Selenium supports multi-programming language compatibility. Languages supported by Selenium are Python, Ruby, Perl, etc. But, QTP supports only VBScript.
+
+-------------------------------------------------------
+
+Q. What are the four elements that you have to pass in Selenium?
+
+Four parameters that need to be passed in Selenium are:
+
+*Host
+*Port number
+*Browser
+*URL  
+
+-------------------------------------------------------
+
+Q. What is a keyword driven framework?
+
+-->Keyword-driven framework is a type of functional test automation framework that separates the test design and development. It uses predefined keywords to perform a set of actions.
+
+--------------------------------------------------------
+
+Q. What is data driven framework?
+
+-->A data-driven framework is a test automation framework that separates the test data from the test script. It allows testers to write automated tests in a way that is independent of the test data. 
+
+--------------------------------------------------------
+
+Q. What are the benefits of automation testing?
+
+-->Automation testing can be a great way to speed up the software testing process by automating repetitive tasks, such as running the same test cases multiple times or across different browsers. By automating certain tests, you can save time, cost and resources that would otherwise be spent on manual testing. Additionally, automation can help to improve the accuracy of your tests. By automating the process, you can eliminate human error. It can provide detailed reports that can help you to identify any areas that need further attention. Overall, automation testing can be a valuable tool for any software development team.
+
+--------------------------------------------------------
+
+-->SDLC:
+
+Software Development Life Cycle. It is a series of steps that provides a well-defined model to develop and manage the lifecycle of low-cost, high-quality software in the shortest possible time.
+
+-->Phases: Planning, Analysis/Define, Design, Development, Testing, Deployment, Maintenance
+
+---------------------------------------------------------
+
+-->STLC:
+
+Software Testing Life Cycle. It is a sequence of different activities performed by the testing team to ensure the quality of the software or the product.
+
+-->Phases: Requirement analysis, Test planning, T-Design, T-Environment, T-Execution, Defect tracking, T-Reporting
+
+---------------------------------------------------------
+
+-->Waterfall model:
+Waterfall methodology is a widely used project management method with a linear approach.
+
+Phases: Requirement Analysis, Define Requirement, Design, Implementation, Testing, Deployment, Maintenance
+
+---------------------------------------------------------
+
+-->Agile methodology:
+
+It is a project management framework that breaks projects down into several sprints. The agile purpose is to manage complex projects
+
+Phases: Planning, Requirement Analysis, Designing, Building, Testing, Deploying, Maintaining
+
+----------------------------------------------------------
+
+-->DevOps:
+*DevOps combines development (Dev) and operations (Ops) to increase the efficiency, speed, and security of software development and delivery compared to traditional processes. 
+*DevOps purpose is to manage end-to-end engineering process. 
+
+Phases: Plan, Code, Build, Test, Release, Deploy, Operate, Monitor
+
+----------------------------------------------------------
+
+-->Bug Lifecycle:
+
+*Defect Life Cycle, or Bug Life Cycle, is the particular set of stages a defect or bug goes through throughout its life.
+*Defect Life Cycle States:
+ New, Assigned, Open,Fixed, Pending Retest, Retest, Verefied, Reopen, Closed
+
+*Apart from these Defect State, there are some other states/status as well:
+ Duplicate, Rejected, Deferred, Not a bug
+
+----------------------------------------------------------
+Q. What is a Framework?
+
+A framework is like a structure that provides a base for the application development process. With the help of a framework, you can avoid writing everything from scratch. Frameworks provide a set of tools and elements that help in the speedy development process. It acts like a template that can be used and even modified to meet the project requirements.
+
+----------------------------------------------------------
+----------------------------------------------------------
+
+--> A release in agile software development is a deployable software package that can be made available before the end of an iteration of an application.
+
+--> A sprint is a predefined span of time in which a team will work to accomplish specific goals.
+
+----------------------------------------------------------
+
+What is testing?
+
+Software testing is the process of evaluating and verifying that a software product or application does what it's supposed to. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

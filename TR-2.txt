@@ -1,0 +1,544 @@
+
+Q. Oops concept:
+
+Basically We have
+i) Abstraction
+ii) Polymorphism
+iii)Inheritance
+iv) Encapsulation
+
+i) Abstraction: Abstraction is the methodology of hiding the implementation of internal details and showing the functionality to the users. Abstraction can be achieved with either abstract classes or interfaces.
+
+* Abstract class is a restricted class that cannot be used to create objects. To access it, it must be inherited from another class.
+*An interface is a completely abstract class that is used to group related methods with empty bodies.
+
+-->In Page Object Model design pattern, we write locators (such as id, name, xpath etc.,) in a Page Class.
+We utilize these locators in tests but we can’t see these locators in the tests. Literally we hide the locators from the tests.
+
+ii) Polymorphism: Polymorphism means many forms and it occurs when we have many classes that are related to each other by inheritance.Polymorphism allows us to perform a task in multiple ways.
+
+a)METHOD OVERLOADING : A class having multiple methods with same name but different parameters is called Method Overloading.
+
+-->We use implicit wait in Selenium. Implicit wait is an example of overloading. In Implicit wait we use different time stamps such as SECONDS, MINUTES, HOURS
+
+b)METHOD OVERRIDING : A class having multiple methods with same name and parameters is called Method Overriding. Declaring a method in child class which is already present in the parent class is called Method Overriding.
+
+-->get() and navigate() methods are example of method overriding. get() and navigate() methods are declared in webdriver interface and implemented in RemoteWebDriver interface.
+
+iii)Inheritance: The process of extending properties from one class to other class is called inheritance.
+
+-->We create a Base Class in the Framework to initialize WebDriver interface, WebDriver waits, Property files, Excels, etc., in the Base Class. We extend the Base Class in other classes.
+
+iv)Encapsulation: Encapsulation is a mechanism of binding code and data together in a single unit.
+
+-->All the classes in a framework is an example of Encapsulation. In POM classes, we declare the data members using @FindBy and initialization of data members will be done using Constructor to utilize those in methods.
+
+------------------------------------------------------------------------
+
+Q. Difference between constructor and method:
+
+@Constructor:
+1. A constructor is invoked implicitly by the system.
+2. A constructor's name must be same as the name of class.
+3. It doesn't has a return type.
+4. It initializes an object that doesn't exist.
+5. A class can have many constructors but must not have the same parameters.
+6. It cannot be inherited.
+
+@Method:
+1. A method is invoked by the programmer.
+2. A method's name can be anything.
+3. It must has a return type.
+4. It does operations on an already created object.
+5. A class can have many methods but must not have the same parameters.
+6. It can be inherited by subclasses.
+
+------------------------------------------------------------------------
+
+Q.Collections: Collections are used to store different type of objects.
+
+i) Difference between linkedlist and arraylist:
+
+@Arraylist:
+1. This class implements a List interface. Therefore, this acts as a list.
+2. This class uses a dynamic array to store the elements in it.
+3. Manipulating ArrayList takes more time due to the internal implementation.
+4. Insertion operation is slow. 
+5. Deletion operation is not very efficient.
+6. It is used to store only similar types of data.-->(1)
+7. Less memory is used.	 
+
+@Linkedlist:
+1. This class implements both the List interface and the Deque interface. Therefore, it can act as a list and a deque.
+//(Deque stands for double ended queue, is a special type of queue that allows adding and removing elements from both front and rear ends.It is a data structure.)//
+ 2. This class uses a doubly linked list to store the elements in it.
+3. Manipulating LinkedList takes less time compared to ArrayList.
+4. Insertion operation is fast.
+5. Deletion operation is very efficient.
+6. It is used to store any types of data.-->(1)
+7. More memory is used.
+
+----------------------------------------------------
+
+ii) Difference between hashmap and treemap:
+
+@Hashmap:
+1. It does not provide any order for elements.	
+2. It’s speed is fast.	
+3. It allows one key as null and also allows multiple values.	
+4. It consumes more memory space.	
+5. It has only basic features.	
+6. For comparing keys, equals() is used.	
+
+@Treemap:
+1. It provides order for elements.
+2. It’s speed is slow.
+3. It does not allow key as null but it allows multiple null values.
+4. It consumes less memory space.
+5. It has advanced features.
+6. For comparing keys, compare or compareTo() is used.
+
+-------------------------------------------------------
+
+iii) Difference between array and arraylist:
+
+@Array:
+1. The array is not resizable. At instantiation, you must provide its maximum size. Overfilling leads to an exception.	
+2. Arrays generally offer better performance than ArrayLists because they are of fixed size and don’t require internal operations to store elements.	
+-->3. Use Array.length to determine the length of an Array.
+4. Arrays support both primitive types (like int, char) and object types.
+-->5. Operations such as indexOf() and remove() are not supported by Arrays in Java.
+
+@Arraylist:
+1. ArrayList is dynamically resizable. It grows as required, even beyond its initial capacity, offering flexibility in the number of elements it can store.
+2. ArrayList can be slower, especially when increasing in size. This is because, when its capacity is exceeded, a new array is created internally, and existing elements are copied over, reducing its performance.
+-->3. The size() method determines the length of an ArrayList. 
+4. ArrayList supports only object types.
+-->5. Operations such as indexOf(), remove() are supported by ArrayList in Java.
+
+-----------------------------------------------------------------------------------------------
+
+iv) Difference between hashset and treeset:
+
+@Hashset:
+1. Hash set is implemented using HashTable.
+2. HashSet allows a null object 
+3. Hash set use equals method to compare two objects 
+4. Hash set doesn't now allow a heterogeneous object 
+5. HashSet does not maintain any order 
+
+@Treeset:
+1. The tree set is implemented using a tree structure. 
+2. The tree set does not allow the null object. It throws the null pointer exception. 
+3. Tree set use compare method for comparing two objects. 
+4. Tree set allows a heterogeneous object 
+5. TreeSet maintain objects in sorted order 
+
+------------------------------------------------------------------------------------------------
+
+Q. What is hashtable?
+
+* A Hash table is defined as a data structure used to insert, look up, and remove key-value pairs quickly. It operates on the hashing concept, where each key is translated by a hash function into a distinct index in an array. The index functions as a storage location for the matching value. In simple words, it maps the keys with the value.
+* Hashing is a technique to convert a range of key values into a range of indexes of an array.
+
+--> by default hastable is Synchronized and can be used in parallel execution
+
+------------------------------------------------------------------------------------------------
+
+*Synchronization in Java is the process that allows only one thread at a particular time to complete a given task entirely.
+
+------------------------------------------------------------------------------------------------
+
+Q. what is parallel execution?
+Parallel execution is a process where multiple tests are executed simultaneously in different thread processes. With respect to Selenium and TestNG, it allows you to execute multiple tests on different browsers, devices, environments in parallel, instead of running it sequentially
+
+-------------------------------------------------------------------------------------------------
+
+Q. synchronization vs non - synchronization:
+
+Synchronized class is thread safe so that it can be used in multi-threaded environment. StringBuffer is an example of synchronized class. Non-synchronized class is not thread safe so it cannot be used in multi-threaded environment. StringBuilder is an example of a non-synchronized class.
+
+// A Synchronized class is a thread-safe class. Non synchronized -It is not-thread safe and can't be shared between many threads without proper synchronization code. While, Synchronized- It is thread-safe and can be shared with many threads. //
+
+-------------------------------------------------------------------------------------------------
+
+Q. Modifiers:
+
+-->Modifiers are keywords that you can add to different definitions to change their meanings.
+-->Access modifiers are the keywords which define the accessibility of a class and its members.
+
+There are four types of Java access modifiers:
+
+1)Private:
+The access level of a private modifier is only within the class. It cannot be accessed from outside the class.
+
+2)Default:
+The access level of a default modifier is only within the package. It cannot be accessed from outside the package. If you do not specify any access level, it will be the default.
+
+3)Protected:
+The access level of a protected modifier is within the package and outside the package through child class. If you do not have the child class, it cannot be accessed from outside the package.
+
+4)Public:
+The access level of a public modifier is everywhere. It can be accessed from within the class, outside the class, within the package and outside the package.
+
+-->Non-access modifiers provide information about the characteristics of a class, method or variable to the JVM. These are of 7 types. They are static, final, abstract, synchronized, volatile, transient, native.
+
+-------------------------------------------------------------------------------------------------
+
+Q. Keywords : static, final:
+ 
+@Static:
+*The static keyword is a non-access modifier used for methods and attributes.
+*Static methods/attributes can be accessed without creating an object of a class.
+*Static can be Applied to Variables, Methods, Nested Class and Initialization Blocks.
+
+@Final:
+*Final is a modifier , it is Applicable for Classes ,methods and Variables.
+*If a class declared as a final then we can’t extend that Class. We can’t create child class for that Class.
+*If a Method declared as a final then we can’t Override that method in the Child class.
+*If a Variable declared as a final then it will become Constant and we Can’t Perform re-assignment for that Variable.
+
+---------------------------------------------------------------------------------------------------
+
+Q.  What is  Try and Catch block ?
+
+*try-catch blocks are generally used to handle exceptions. 
+*Type of exceptions is declared in catch block which is expected to come.
+*When an exception comes in try block, immediately control moves to catch block.
+
+---------------------------------------------------------------------------------------------------
+
+Q. Finally:
+
+*finally is a Block ,Always Associated with Try and Catch
+*Cleanup Code Activities will be done in the Finally
+
+----------------------------------------------------------------------------------------------------
+
+Q. Throw and Throws:
+
+@Throw:
+1. Java throw keyword is used to explicitly throw an exception.
+2. Checked exception cannot be propagated using throw only.
+3. Throw is followed by an instance.
+4. Throw is used within the method.
+5. You cannot throw multiple exceptions.
+
+@Throws:
+1. Java throws keyword is used to declare an exception.
+2. Checked exception can be propagated with throws.
+3. Throws is followed by class.
+4. Throws is used with the method signature.
+5. You can declare multiple exceptions.
+
+-----------------------------------------------------------------------------------------------------
+
+Q.  annotations, grouping, dataprovider, listeners
+
+@Annotations: Refer qstn 16
+
+@grouping: TestNG Groups allow a way to group multiple test cases written in Selenium under a common name. Using groups in TestNG you can run multiple test cases which are tagged using a group name together, thereby separating the test cases as per their tagged groups.
+
+@DataProvider: It is a feature of the TestNG library that allows a developer to run the same suite of test cases with different data sets. It helps the developer to test the application with different values. You can use this to test the business logic of any application.
+
+@listeners: The @Listener annotation in TestNG is used to specify a class that contains methods that should be invoked before or after certain events occur during a test run. These methods are called listener methods, and they can be used to perform additional actions such as logging, reporting, or cleanup.
+                                                  (OR)
+ Listener is an interface that modifies the behaviour of the system and it is actually used for customization of reports and logs. There are 2 types of listeners like webdriver listener and TestNG listener
+
+-----------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+Q. Waits:
+
+@Implicit wait: An implicit wait is a type of wait that waits for a specified time while locating an element before throwing NoSuchElementException.All web elements are affected by the implicit wait in selenium, which is set globally for the duration of the test script's execution.
+
+@Explicit wait: An explicit wait is a type of wait that is applied to a particular web element until the specified condition is met.
+WebDriverWait wait = new WebDriverWait(driver, 10);
+WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id(“elementId”)));
+
+------------------------------------------------------------------------------------------------------
+
+Q. screenshot:
+
+A Screenshot in Selenium Webdriver is used for bug analysis. Selenium webdriver can automatically take screenshots during the execution. But if users need to capture a screenshot on their own, they need to use the TakeScreenshot method which notifies the WebDriver to take the screenshot and store it in Selenium.
+
+File src = ((TakeScreenshot)driver).getScreenshotAs(OutputType.FILE);
+File dest = new File("destination where ss to be stored");
+Fileutils.copyFile(src,dest);
+
+------------------------------------------------------------------------------------------------------
+Q. Scroll:
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,250)", "");
+
+-------------------------------------------------------------------------------------------------------
+
+Q. Actions:
+
+Actions class is an ability provided by Selenium for handling keyboard and mouse events.
+
+Actions action = new Actions(driver);
+action.moveToElement(element).click().perform();
+
+--> Mouse Actions in Selenium:
+
+*doubleClick(): Performs double click on the element
+*clickAndHold(): Performs long click on the mouse without releasing it
+*dragAndDrop(): Drags the element from one point and drops to another
+*moveToElement(): Shifts the mouse pointer to the center of the element
+*contextClick(): Performs right-click on the mouse
+
+--> Keyboard Actions in Selenium:
+
+*sendKeys(): Sends a series of keys to the element
+*keyUp(): Performs key release
+*keyDown(): Performs keypress without release
+
+------------------------------------------------------------------------------------------------------
+
+Q. Dropdown:
+
+*Using selection class we can handle dropdown.
+
+Syntax:
+Select ref = new Select(WebElement);
+
+-->Methods:
+i)SelectByIndex();
+ii)SelectByValue();
+ii)SelectByVisibleText();
+
+*we have single selection and multiselection dropdown
+
+
+------------------------------------------------------------------------------------------------------
+
+Q. Navigate commands:
+
+*driver.navigate().to("https://www.ebay.in/"); - Navigates to the provided URL
+
+*driver.navigate().refresh(); - This method refreshes the current page
+
+*driver.navigate().forward(); - This method does the same operation as clicking on the Forward Button of any browser. It neither accepts nor returns anything.
+
+*driver.navigate().back(); - This method does the same operation as clicking on the Back Button of any browser. It neither accepts nor returns anything.
+
+----------------------------------------------------------------------------------------------------                                                                                                                                                                
+Q. iframes:                                             
+
+*iFrame in Selenium Webdriver is a web page which is embedded in another web page or an HTML document embedded inside another HTML document. The iframe is often used to add content from other sources like an advertisement into a web page.
+
+-->We can even identify total number of iframes by using below snippet.
+
+Int size = driver.findElements(By.tagName("iframe")).size();
+
+-->Basically, we can switch over the elements and handle frames in Selenium using 3 ways.
+
+i)By Index
+ii)By Name or Id
+iii)By Web Element
+
+i)By Index
+*Index of the iframe starts with ‘0’.
+
+Syntax:
+driver.switchTo().frame(0);
+driver.switchTo().frame(1);
+
+ii)By Name or Id:
+
+Syntax:
+driver.switchTo().frame("iframe1");
+driver.switchTo().frame("id of the element")
+ 
+iii)By Web Element:
+
+Syntax:
+driver.switchTo().frame(WebElement);
+
+---------------------------------------------------------------------------------------------------------
+
+Q. Window handling:
+
+The window handling feature allows one to handle single as well as multiple windows in Selenium. Every window has a unique window handle value through which it is identified. 
+
+* getwindowhandles(): It is used to retrieve the addresses of all currently open browsers. This method returns a Set data type containing the addresses.
+* getwindowhandle(): It is used to obtain the current browser’s address and its return type is a string data type.
+
+---------------------------------------------------------------------------------------------------------
+
+Q. Alerts:
+
+Alerts are basically an interface between the current web page and UI. It can also be defined as a small message box which displays an on-screen notification to give the user some kind of information or ask for permission to perform a certain kind of operation. It may be also used for warning purpose.
+
+Syntax:
+Alert ref= driver.switchTo().alert();
+ref.accept();
+ref.dismiss();
+String ref = ref.getText();
+
+---------------------------------------------------------------------------------------------------------
+
+Q. API:
+
+-->API testing, or application programming interface testing, is a type of software testing that focuses on the testing of individual API methods and the interactions between different APIs. This type of testing is typically performed at the integration level, after unit testing is completed, and before user interface testing begins. It is used to validate that the API behaves correctly and that it meets the requirements of the system.
+
+-->API testing can be performed manually or using automated testing tools. Some common tasks that are performed during API testing include:
+
+*Testing the functionality of the API to ensure it behaves as expected
+*Verifying that the API returns the correct response for different input values Checking for error handling and validation of input
+*Testing for security vulnerabilities
+*Checking for performance and scalability of the API
+*API testing is important because it ensures that the different components of a system can communicate with each other correctly and that the system can handle a large volume of requests.                                     
+
+-->API stands for Application Programming Interface which acts as an interface between two software applications so that two software applications can communicate with each other.
+
+-->There are several types of API testing, including:
+
+*Functional testing: Testing the functionality of the API to ensure it behaves as expected
+*Security testing: Testing the security of the API to ensure it is protected against common vulnerabilities
+*Performance testing: Testing the performance of the API to ensure it can handle the expected load
+*Interoperability testing: Testing the compatibility of the API with other systems
+*Usability testing: Testing the usability of the API for developers
+*Tools such as Postman, SoapUI, and Runscope can be used to automate and simplify the process of API testing.
+
+-->Below list represents some of the tools which are used for API Testing :
+
+*Postman
+*Katalon Studio
+*Soap UI
+*Parasoft
+*REST assured
+*Tricentis Tosca
+*Ping API
+*Assertible
+
+-----------------------------------------------------------------------------------------------------------------
+
+Q. CRUD operations(post, get, put, patch):
+
+-->CRUD stands for Create, Read/ Retrieve, Update and Delete; these are used in file handling in Java. Creation of a file is done using POST, Reading of the file is done using GET, Updating the file using PUT, and for deleting a file, we use DELETE.
+
+------------------------------------------------------------------------------------------------------------------
+
+Q. HTTP methods:
+
+These are the 5 HTTP methods:
+
+GET: to read or retrieve the data
+POST: to create a new resource
+PUT: to update the record
+PATCH: to modify the record but not the complete resource
+DELETE: to delete a resource
+
+------------------------------------------------------------------------------------------------------------------
+
+Q. What is Jenkins?
+
+*Jenkins can be used to automate building an application, running tests, and deploying the application. It can be easily installed through native system packages, Docker, or even run standalone by any machine with a Java Runtime Environment (JRE) installed.
+
+-->Advantages of using Jenkins:
+
+*Jenkins can be used to build pipeline/workflows
+*It can be Integrated with Chat tools like Teams, and Slack for notifying the status of build jobs
+*Jenkins can be used to Schedule builds periodically or trigger based on changes in the Source code repository
+*Jenkins can be used to show the HTML report of Automated Tests Execution
+*Jenkins can be used to send emails with Test Execution Report
+
+-->Limitations of using Jenkins:
+
+*Although there are plugins supporting Docker integration, Jenkins still has a long way to go in this domain.
+*Jenkins does not itself host a cloud-based service. Users need to rely on services provided by cloud service providers like AWS, GCP, Azure, Cloudbees, etc.
+*Lesser flexibility in using plugins as they are not customizable.
+
+-------------------------------------------------------------------------------------------------------------------
+
+Q. What is git:
+
+*Git is a version control tool which is used to store the source code in the repository and also used for versioning.
+
+-->Some of the git commands are,
+
+*To pull: git pull origin (branch name)
+*To push: git push -u origin (branch name)
+*To merge: git merge (branch name)
+*To clone: git clone (key)
+
+-------------------------------------------------------------------------------------------------------------------
+
+Q. Scanner Class:
+
+Scanner class is used to read or pass data from console in Java.
+
+Syntax:
+Scanner ref = new scanner(System.in);
+ 
+String data = ref.nextLine();
+int data = ref.nextInt();
+Boolean data = ref.nextBoolean();
+long data = ref.nextLong();
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
